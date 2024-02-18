@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mondoapp/intro1.dart';
 import 'LoginPage.dart';
 import 'RegistrationPage.dart';
 import 'MitfahrerRegistrationPage.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => intro1(),
         '/registration': (context) => RegistrationPage(),
         '/mitfahrerregistration': (context) => MitfahrerRegistrationPage(),
       },

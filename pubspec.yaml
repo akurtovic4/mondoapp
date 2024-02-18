@@ -66,6 +66,10 @@ flutter:
     - images/cardriver.jpg
     - images/putnik.jpg
     - images/autobus.png
+    - images/zenasasalom.jpg
+    - images/stanica.jpg
+    - images/zenapokazujetelefon.jpg
+    - images/go2.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
