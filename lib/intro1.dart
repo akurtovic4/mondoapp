@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'intro2.dart';
 
 class intro1 extends StatelessWidget {
   @override
@@ -47,10 +48,33 @@ class intro1 extends StatelessWidget {
                   SizedBox(height: 8),
 
                   SizedBox(height: 16),
+
+                  Container(
+                    height: MediaQuery.of(context).size.height / 4,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Container(
+                        height: 1000,
+                        width: 1000,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('images/go2.png'), // Putanja do slike
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () {
                       // Logika za dugme "Losgen"
                       print('Dugme Losgen je pritisnuto.');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => intro2()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue.shade900, // Boja pozadine dugmeta
