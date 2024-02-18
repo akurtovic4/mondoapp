@@ -16,18 +16,45 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 3,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/headerblur.jpg'),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                  Colors.white.withOpacity(0.6),
-                  BlendMode.srcOver,
+          Stack(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height / 3,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/headerblur.jpg'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.white.withOpacity(0.6),
+                      BlendMode.srcOver,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Positioned(
+                top: 10,
+                left: 10,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context); // Povratak na prethodnu stranicu (login)
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      "Zuruck",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),

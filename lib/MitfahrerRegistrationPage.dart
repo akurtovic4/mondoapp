@@ -3,33 +3,63 @@ import 'package:mondoapp/BlueBoxMitfahrer.dart';
 
 class MitfahrerRegistrationPage extends StatefulWidget {
   @override
-  _MitfahrerRegistrationPageState createState() => _MitfahrerRegistrationPageState();
+  _MitfahrerRegistrationPageState createState() =>
+      _MitfahrerRegistrationPageState();
 }
 
-class _MitfahrerRegistrationPageState extends State<MitfahrerRegistrationPage> {
+class _MitfahrerRegistrationPageState
+    extends State<MitfahrerRegistrationPage> {
   String gender = '';
-  String smoker = ''; // Dodao sam promenljivu za praćenje izabrane vrednosti za Raucher
+  String smoker = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              height: MediaQuery.of(context).size.height / 4,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/headerblur.jpg'),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(0.6),
-                    BlendMode.srcOver,
+            Stack(
+              alignment: Alignment.topLeft,
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height / 4,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/headerblur.jpg'),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.white.withOpacity(0.6),
+                        BlendMode.srcOver,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+
+                Positioned(
+                  top: 10,
+                  left: 10,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context); // Povratak na prethodnu stranicu (login)
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "Zuruck",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
             BlueBoxMitfahrer(),
             Padding(
