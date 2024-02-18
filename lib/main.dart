@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
-import 'RegistrationPage.dart'; // Import the new registration page file
+import 'RegistrationPage.dart';
 import 'MitfahrerRegistrationPage.dart';
 
 void main() => runApp(MyApp());
@@ -12,10 +12,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(), // Login page
-        '/registration': (context) => RegistrationPage(), // Registration page
+        '/': (context) => LoginPage(),
+        '/registration': (context) => RegistrationPage(),
         '/mitfahrerregistration': (context) => MitfahrerRegistrationPage(),
-
       },
     );
   }

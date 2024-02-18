@@ -14,13 +14,19 @@ class ButtonWeitter extends StatelessWidget {
         color: Colors.lightBlue.shade900,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(
-        child: Text(
-          "Weiter",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+      child: InkWell(
+        onTap: () {
+          print("Weiter button tapped"); // Dodajte ispis kako biste provjerili pritisak na dugme
+          onPressed();
+        },
+        child: Center(
+          child: Text(
+            "Weiter",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

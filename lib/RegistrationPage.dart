@@ -3,13 +3,19 @@ import 'package:mondoapp/BlueBox.dart';
 import 'package:mondoapp/ButtonWeitter.dart';
 import 'package:mondoapp/MitfahrerRegistrationPage.dart';
 
-class RegistrationPage extends StatelessWidget {
+class RegistrationPage extends StatefulWidget {
+  @override
+  _RegistrationPageState createState() => _RegistrationPageState();
+}
+
+class _RegistrationPageState extends State<RegistrationPage> {
+  int selectedButton = 0; // Variable to track the selected button
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-
           Container(
             height: MediaQuery.of(context).size.height / 3,
             decoration: BoxDecoration(
@@ -24,7 +30,7 @@ class RegistrationPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0), // Customize the padding for the BlueBox
+            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
             child: Container(
               child: BlueBox(),
               width: 1000,
@@ -40,9 +46,7 @@ class RegistrationPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-
                       Expanded(
-
                         child: Ink.image(
                           image: AssetImage('images/cardriver.jpg'),
                           fit: BoxFit.cover,
@@ -50,34 +54,38 @@ class RegistrationPage extends StatelessWidget {
                           width: 80,
                           child: InkWell(
                             onTap: () {
-                              // Dodajte akciju za prvo dugme
+                              setState(() {
+                                selectedButton = 1;
+                              });
                             },
+                            child: selectedButton == 1
+                                ? Icon(Icons.check_circle, color: Colors.blue)
+                                : Container(),
                           ),
                         ),
                       ),
-
                       SizedBox(width: 16),
-
                       Expanded(
-
-                          child: Ink.image(
-                            image: AssetImage('images/putnik.jpg'),
-                            fit: BoxFit.cover,
-                            height: 200,
-                            width: 80,
-                            child: InkWell(
-                              onTap: () {
-                                // Dodajte akciju za drugo dugme
-                              },
-                            ),
+                        child: Ink.image(
+                          image: AssetImage('images/putnik.jpg'),
+                          fit: BoxFit.cover,
+                          height: 200,
+                          width: 80,
+                          child: InkWell(
+                            onTap: () {
+                              setState(() {
+                                selectedButton = 2;
+                              });
+                            },
+                            child: selectedButton == 2
+                                ? Icon(Icons.check_circle, color: Colors.blue)
+                                : Container(),
                           ),
                         ),
-
-
+                      ),
                     ],
                   ),
                   Text("---------oder---------"),
-
                   SizedBox(height: 16),
                   Ink.image(
                     image: AssetImage('images/autobus.png'),
@@ -86,24 +94,25 @@ class RegistrationPage extends StatelessWidget {
                     width: 200,
                     child: InkWell(
                       onTap: () {
-                        // Dodajte akciju za treće dugme
+                        setState(() {
+                          selectedButton = 3;
+                        });
                       },
+                      child: selectedButton == 3
+                          ? Icon(Icons.check_circle, color: Colors.blue)
+                          : Container(),
                     ),
                   ),
                 ],
               ),
-
             ),
           ),
           ButtonWeitter(
             onPressed: () {
               print("Weiter button pressed");
               Navigator.pushNamed(context, '/mitfahrerregistration');
-
             },
           ),
-
-
           SizedBox(height: 10),
         ],
       ),
