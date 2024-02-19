@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mondoapp/intro1.dart';
 import 'LoginPage.dart';
 import 'RegistrationPage.dart';
 import 'MitfahrerRegistrationPage.dart';
@@ -20,8 +19,10 @@ class MyApp extends StatelessWidget {
         '/registration': (context) => RegistrationPage(),
         '/mitfahrerregistration': (context) => MitfahrerRegistrationPage(),
         '/intro1': (context) => intro1(),
-        '/intro2': (context) => intro2()
-        //'/intro3': (context) => intro3(),
+        '/intro2': (context) => intro2(),
+        '/intro3': (context) => intro3(),
+        '/login': (context) => intro3(),
+
 
       },
     );
