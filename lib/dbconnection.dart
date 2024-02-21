@@ -2,11 +2,11 @@
 
 
 
-//   // Pokušajte uspostaviti vezu s bazom podataka
+//  
 //   try {
 //     final MySqlConnection connection = await MySqlConnection.connect(settings);
 
-//     // Izvršite SQL upit
+//     
 //      Results results = await connection.query('SELECT * FROM users');
 
 
@@ -37,7 +37,7 @@
 //     //   print('ID: ${row[0]}, Name: ${row[1]}');
 //     // }
 
-//     // Zatvorite vezu s bazom
+//     
 //     await connection.close();
 //   }
 
